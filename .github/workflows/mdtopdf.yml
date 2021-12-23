@@ -8,7 +8,9 @@ on:
     paths:
       - 'ASE/**.md'
       - 'ASE/images/**'
-
+    
+  workflow_dispatch:
+    
 jobs:
   converttopdf:
     name: Build PDF
@@ -21,7 +23,7 @@ jobs:
           output_dir: ASE/pdfs
           images_dir: ASE/images
           # for example <img src="./images/file-name.png">
-          image_import: ./ASE/images
+          image_import: ASE/images
           # Default is true, can set to false to only get PDF files
           build_html: false
       - uses: actions/upload-artifact@v1
